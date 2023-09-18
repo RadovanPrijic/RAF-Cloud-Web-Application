@@ -1,0 +1,18 @@
+<div>
+	<h3><b>Login page</b></h3>
+	<br>
+	<div>
+		<form [formGroup]="loginForm" (submit)="login()" class="mb-5">
+			<div class="form-group mb-2">
+				<label for="email">Email address:</label>
+				<input type="email" class="form-control" id="email" name="email" 
+					placeholder="Enter your email address" [formControlName]="'email_field'">
+				<label for="password">Password:</label>
+				<input type="password" class="form-control" id="password" name="password"
+					placeholder="Enter your password" [formControlName]="'password_field'">
+			</div>
+			<br>
+			<button type="submit" class="btn btn-primary">Log in</button>
+		</form>
+	</div>
+</div>

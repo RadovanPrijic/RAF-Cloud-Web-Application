@@ -1,0 +1,6 @@
+<div>
+  <button *ngIf="getPermission('CAN_READ_USERS')" [routerLink]="['/get_users']" type="button" style="width:180px; height:120px;" 
+    class="btn btn-primary me-2">USERS</button>
+  <button *ngIf="getPermission('CAN_SEARCH_MACHINES')" [routerLink]="['/get_machines']" type="button" style="width:180px; height:120px;" 
+    class="btn btn-primary">MACHINES</button>
+</div>

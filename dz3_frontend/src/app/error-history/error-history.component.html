@@ -1,0 +1,21 @@
+<div>
+    <button [routerLink]="['/get_machines']" type="button" class="btn btn-secondary">Return to machine list</button>
+</div>
+<br>
+<div>
+    <h3><b>User's machine error history</b></h3>
+	<br>
+    <div *ngFor="let error of errorMessageList; let i = index;" class="mb-2">
+
+        <div>
+            <h4>{{ i+1 }}. <a>{{ error.machine.name }}</a></h4>
+            <label><b>Operation:</b></label>
+            <p>{{ error.operation }}</p>
+            <label><b>Error message:</b></label>
+            <p>{{ error.message }}</p>
+            <label><b>Error date:</b></label>
+            <p>{{ error.creationDate }}</p>
+            <hr>
+        </div>
+    </div>
+</div>

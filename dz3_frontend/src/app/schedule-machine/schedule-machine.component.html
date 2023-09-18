@@ -1,0 +1,31 @@
+<div>
+    <button [routerLink]="['/get_machines']" type="button" class="btn btn-secondary">Return to machine list</button>
+</div>
+<br>
+<h3><b>Machine operation scheduling</b></h3>
+<br>
+<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" 
+        value="START" [(ngModel)]="startBtn">
+    <label class="btn btn-outline-primary" for="btnradio1">START</label>
+
+    <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" 
+        value="STOP" [(ngModel)]="stopBtn">
+    <label class="btn btn-outline-primary" for="btnradio2">STOP</label>
+
+    <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off"
+        value="RESTART" [(ngModel)]="restartBtn">
+    <label class="btn btn-outline-primary" for="btnradio3">RESTART</label>
+</div>
+<form [formGroup]="scheduleForm" (submit)="scheduleMachine()" class="mb-5">
+    <div class="form-group mb-2">
+        <label for="operationDate">Date of operation:</label>
+        <input type="date" class="form-control" id="operationDate" name="operationDate"
+            [(ngModel)]="machineScheduleInfo.date" [formControlName]="'date_field'">
+        <label for="operationTime">Time of operation:</label>
+        <input type="time" step="1" class="form-control" id="operationTime" name="operationTime" 
+            [(ngModel)]="machineScheduleInfo.time" [formControlName]="'time_field'">
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Schedule</button>
+</form>

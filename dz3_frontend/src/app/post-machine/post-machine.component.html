@@ -1,0 +1,17 @@
+<div>
+    <button [routerLink]="['/get_machines']" type="button" class="btn btn-secondary">Return to machine list</button>
+</div>
+<br>
+<div>
+    <h3><b>Machine creation page</b></h3>
+	<br>
+    <form [formGroup]="postForm" (submit)="postMachine()" class="mb-5">
+        <div class="form-group mb-2">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter the machine's name"
+                [(ngModel)]="machinePostInfo.name" [formControlName]="'name_field'">
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Create machine</button>
+    </form>
+</div>

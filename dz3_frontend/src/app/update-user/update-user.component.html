@@ -1,0 +1,82 @@
+<div>
+    <button [routerLink]="['/get_users']" type="button" class="btn btn-secondary">Return to user list</button>
+</div>
+<br>
+<div>
+	<h3><b>User update page</b></h3>
+	<br>
+	<div>
+        <label for="checkbox">Authorization roles:</label>
+        <div class="form-check">
+            <input [(ngModel)]="readRole" class="form-check-input" type="checkbox" 
+                value="CAN_READ_USERS" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">READ USERS</label>
+        </div>
+        <div class="form-check">
+            <input [(ngModel)]="createRole" class="form-check-input" type="checkbox" 
+                value="CAN_CREATE_USERS" id="defaultCheck2">
+            <label class="form-check-label" for="defaultCheck2">CREATE USERS</label>
+        </div>
+        <div class="form-check">
+            <input [(ngModel)]="updateRole" class="form-check-input" type="checkbox" 
+                value="CAN_UPDATE_USERS" id="defaultCheck3">
+            <label class="form-check-label" for="defaultCheck3">UPDATE USERS</label>
+        </div>
+        <div class="form-check">
+            <input [(ngModel)]="deleteRole" class="form-check-input" type="checkbox" 
+                value="CAN_DELETE_USERS" id="defaultCheck4">
+            <label class="form-check-label" for="defaultCheck4">DELETE USERS</label>
+        </div>
+        <div class="form-check">
+            <input [(ngModel)]="searchMachinesRole" class="form-check-input" type="checkbox" 
+                value="CAN_SEARCH_MACHINES" id="defaultCheck4">
+            <label class="form-check-label" for="defaultCheck4">SEARCH MACHINES</label>
+        </div>
+        <div class="form-check">
+            <input [(ngModel)]="startMachinesRole" class="form-check-input" type="checkbox" 
+                value="CAN_START_MACHINES" id="defaultCheck4">
+            <label class="form-check-label" for="defaultCheck4">START MACHINES</label>
+        </div>
+        <div class="form-check">
+            <input [(ngModel)]="stopMachinesRole" class="form-check-input" type="checkbox" 
+                value="CAN_STOP_MACHINES" id="defaultCheck4">
+            <label class="form-check-label" for="defaultCheck4">STOP MACHINES</label>
+        </div>
+        <div class="form-check">
+            <input [(ngModel)]="restartMachinesRole" class="form-check-input" type="checkbox" 
+                value="CAN_RESTART_MACHINES" id="defaultCheck4">
+            <label class="form-check-label" for="defaultCheck4">RESTART MACHINES</label>
+        </div>
+        <div class="form-check">
+            <input [(ngModel)]="createMachinesRole" class="form-check-input" type="checkbox" 
+                value="CAN_CREATE_MACHINES" id="defaultCheck4">
+            <label class="form-check-label" for="defaultCheck4">CREATE MACHINES</label>
+        </div>
+        <div class="form-check">
+            <input [(ngModel)]="scheduleMachinesRole" class="form-check-input" type="checkbox" 
+                value="CAN_SCHEDULE_MACHINES" id="defaultCheck4">
+            <label class="form-check-label" for="defaultCheck4">SCHEDULE MACHINES</label>
+        </div>
+        <div class="form-check">
+            <input [(ngModel)]="destroyMachinesRole" class="form-check-input" type="checkbox" 
+                value="CAN_DESTROY_MACHINES" id="defaultCheck4">
+            <label class="form-check-label" for="defaultCheck4">DESTROY MACHINES</label>
+        </div>
+        <br>
+		<form [formGroup]="updateForm" (submit)="updateUser()" class="mb-5">
+			<div class="form-group mb-2">
+				<label for="name">Name:</label>
+				<input type="text" class="form-control" id="name" name="name" 
+					placeholder="Enter the user's name" [(ngModel)]="userInfo.name" [formControlName]="'name_field'" required>
+				<label for="surname">Surname:</label>
+				<input type="text" class="form-control" id="surname" name="surname"
+					placeholder="Enter the user's surname" [(ngModel)]="userInfo.surname" [formControlName]="'surname_field'" required>
+                <label for="email">Email address:</label>
+                <input type="email" class="form-control" id="email" name="email"
+                    placeholder="Enter the user's email address" [(ngModel)]="userInfo.email" [formControlName]="'email_field'" required>
+			</div>
+			<br>
+			<button type="submit" class="btn btn-primary">Update user</button>
+		</form>
+	</div>
+</div>
